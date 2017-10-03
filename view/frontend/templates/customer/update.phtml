@@ -1,0 +1,75 @@
+<?php
+$products = $block->getProductCollection();
+//$isManager = $block->getManager();
+//$block->logger->debug('Is Manager: '.$isManager);
+$customer = $block->getCustomer();
+$block->logger->debug('Is Manager: '.var_dump($customer));ss
+
+?>
+<!--<div>--><?php //echo $isManager; ?><!--</div>-->
+<div><?php var_dump($customer); ?></div>
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Room Name</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <?php foreach ($products as $product):?>
+        <tr>
+            <td><?php echo $product->getId(); ?></td>
+            <td><?php echo $product->getName(); ?></td>
+            <td><?php echo $product->getFinalPrice(); ?></td>
+            <td><a href="#">Edit</a></td>
+        </tr>
+    <?php endforeach;?>
+</table>
+
+
+
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<form action="--><?php //echo $block->getUrl('customer/save'); ?><!--">-->
+<!--    <fieldset class="fieldset">-->
+<!--        <legend class="legend"><span>Product Information</span></legend><br>-->
+<!---->
+<!--        <label class="label" for="name"><span>Name</span></label>-->
+<!--        <div class="control">-->
+<!--            <input type="text" class="input-text" name="name" id="name" />-->
+<!--        </div><br>-->
+<!---->
+<!--        <label class="label" for="price"><span>Price</span></label>-->
+<!--        <div class="control">-->
+<!--            <input type="text" class="input-text" name="price" id="price" />-->
+<!--        </div><br>-->
+<!---->
+<!--        <label class="label" for="number_pc"><span>Number PC</span></label>-->
+<!--        <div class="control">-->
+<!--            <input type="text" class="input-text" name="number_pc" id="number_pc" />-->
+<!--        </div><br>-->
+<!---->
+<!--        <label class="label" for="address"><span>Address</span></label>-->
+<!--        <div class="control">-->
+<!--            <input type="text" class="input-text" name="address" id="address" />-->
+<!--        </div><br>-->
+<!---->
+<!--        <label class="label" for="food_price"><span>Food Price</span></label>-->
+<!--        <div class="control">-->
+<!--            <input type="text" class="input-text" name="food_price" id="food_price" />-->
+<!--        </div><br>-->
+<!---->
+<!--        <label class="label" for="drink_price"><span>Drink price</span></label>-->
+<!--        <div class="control">-->
+<!--            <input type="text" class="input-text" name="drink_price" id="drink_price" />-->
+<!--        </div>-->
+<!---->
+<!--    </fieldset>-->
+<!--    <div class="primary">-->
+<!--        <button type="button" class="action primary" title="Save"><span>Save</span></button>-->
+<!--    </div>-->
+<!--</form>-->
+
+
